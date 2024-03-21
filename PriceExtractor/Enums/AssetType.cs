@@ -2,6 +2,6 @@
 {
     public enum AssetType
     {
-        Acao, FII
+        Acao, FII, None
     }
 }

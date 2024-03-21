@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PriceExtractor.Interface"
         mc:Ignorable="d"
-        Title="InsertManyScreen" Height="351" Width="342">
+        Title="InsertManyScreen" Height="403" Width="279">
     <Grid>
-        <ComboBox Name="cbAsset" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Top" Width="250"/>
-        <TextBox Name="txtAmount" HorizontalAlignment="Left" Margin="50,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtTotalValue" HorizontalAlignment="Left" Margin="50,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox Name="cbAsset" HorizontalAlignment="Left" Margin="50,90,0,0" VerticalAlignment="Top" Width="138"/>
+        <TextBox Name="txtAmount" HorizontalAlignment="Left" Margin="50,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtTotalValue" HorizontalAlignment="Left" Margin="50,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker Name="dpDate" HorizontalAlignment="Left" Margin="50,32,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnInsert" Content="Inserir" HorizontalAlignment="Left" Margin="50,242,0,0" VerticalAlignment="Top" Width="84" Height="37" Click="btnInsert_Click"/>
-        <Label Content="Quantidade" HorizontalAlignment="Left" Margin="50,117,0,0" VerticalAlignment="Top"/>
-        <Label Content="Valor Total" HorizontalAlignment="Left" Margin="50,169,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnInsert" Content="Inserir" HorizontalAlignment="Left" Margin="68,319,0,0" VerticalAlignment="Top" Width="84" Height="37" Click="btnInsert_Click"/>
+        <Label Content="Quantidade" HorizontalAlignment="Left" Margin="50,194,0,0" VerticalAlignment="Top"/>
+        <Label Content="Valor Total" HorizontalAlignment="Left" Margin="50,244,0,0" VerticalAlignment="Top"/>
         <Label Content="Ativo" HorizontalAlignment="Left" Margin="50,59,0,0" VerticalAlignment="Top"/>
         <Label Content="Data da Negociação" HorizontalAlignment="Left" Margin="50,1,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnAddAsset" Content="+" HorizontalAlignment="Left" Margin="164,159,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.191,-0.584" Height="18" Width="24" Click="btnAddAsset_Click"/>
+        <TextBox x:Name="txtNewAsset" HorizontalAlignment="Left" Margin="50,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="103"/>
+        <Label Content="Adicionar Ativo" HorizontalAlignment="Left" Margin="50,130,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbPinned" Content="Fixar" HorizontalAlignment="Left" Margin="198,36,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

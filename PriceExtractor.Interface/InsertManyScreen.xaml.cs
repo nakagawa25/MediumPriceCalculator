@@ -43,6 +43,12 @@ namespace PriceExtractor.Interface
             cbAsset.SelectedIndex = -1;
             txtAmount.Clear();
             txtTotalValue.Clear();
+            txtNewAsset.Clear();
+
+            if (cbPinned.IsChecked == false)
+            {
+                dpDate.SelectedDate = null;
+            }
         }
 
         private void FillComboBox()
@@ -50,6 +56,29 @@ namespace PriceExtractor.Interface
             var assetsNames = Services.NegotiationAssetService.GetAssetsName();
             cbAsset.ItemsSource = assetsNames;
             cbAsset.DisplayMemberPath = "Key";
+        }
+
+        private void btnAddAsset_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var assetName = txtNewAsset.Text;
+
+                if (assetName == string.Empty)
+                {
+                    MessageBox.Show("Insira um Ticker válido. ");
+                    return;
+                }
+
+                Tools.ManualInsert.InsertNewAssetName(assetName);
+                CleanFields();
+                FillComboBox();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                return;
+            }
         }
     }
 }
