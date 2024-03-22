@@ -20,12 +20,14 @@ namespace PriceExtractor.Interface
         {
             try
             {
-                var negotiation = Tools.ManualInsert.GetNegotiationObject(
-                    ((KeyValuePair<string, AssetType>)cbAsset.SelectedItem).Key,
-                    ((KeyValuePair<string, AssetType>)cbAsset.SelectedItem).Value,
-                    Convert.ToInt32(txtAmount.Text),
-                    dpDate.DisplayDate,
-                    Convert.ToDouble(txtTotalValue.Text));
+                var negotiation = Tools.ManualInsert.GetNegotiationObject
+                    (
+                        ((KeyValuePair<string, AssetType>)cbAsset.SelectedItem).Key,
+                        ((KeyValuePair<string, AssetType>)cbAsset.SelectedItem).Value,
+                        Convert.ToInt32(txtAmount.Text),
+                        dpDate.DisplayDate,
+                        Convert.ToDouble(txtTotalValue.Text)
+                    );
 
                 Tools.ManualInsert.Insert(negotiation);
                 MessageBox.Show("Sucesso");

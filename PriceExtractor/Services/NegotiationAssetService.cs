@@ -50,6 +50,18 @@ namespace PriceExtractor.Services
             }
         }
 
+        public static void UpdateNegotiationsAssets(List<NegotiationAsset> negotiationAssets)
+        {
+            using (var context = new ContextDB())
+            {
+                foreach (var negotiationAsset in negotiationAssets)
+                {
+                    context.Negotiations.Update(negotiationAsset);
+                }
+                context.SaveChanges();
+            }
+        }
+
         public static void DeleteAllNegotiationAndAssets()
         {
             using (var context = new ContextDB())

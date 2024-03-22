@@ -30,7 +30,7 @@ namespace PriceExtractor.Tools
             var negotiation = new NegotiationAsset()
             {
                 StockCode = name,
-                AssetType = AssetType.None,
+                AssetType = TextExtractor.TakeAssetType(name),
                 Amount = 0,
                 NegotiationDate = DateTime.Now.AddYears(-2),
                 Price = 0

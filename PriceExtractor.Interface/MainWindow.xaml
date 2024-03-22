@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PriceExtractor.Interface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="525" Width="800">
     <Grid>
-        <Button Name="btnCalculate" Content="Calcular" HorizontalAlignment="Left" Margin="668,52,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnCalculate_Click"/>
+        <Button Name="btnCalculate" Content="Calcular XP" HorizontalAlignment="Left" Margin="668,52,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnCalculate_Click"/>
         <TextBox Name="txtInputText" HorizontalAlignment="Left" Margin="17,18,0,0" TextWrapping="Wrap"  AcceptsReturn="True" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Width="636" Height="67"/>
-        <DataGrid Name="dgNegotiation" Margin="0,107,147,0"/>
+        <DataGrid Name="dgNegotiation" Margin="17,106,147,10"/>
         <DatePicker Name="dpNegotiation" HorizontalAlignment="Left" Margin="668,18,0,0" VerticalAlignment="Top" Width="112"/>
-        <Button x:Name="btnInsert" Content="Inserir" HorizontalAlignment="Left" Margin="669,107,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnInsert_Click"/>
-        <Button x:Name="btnGetMediumPrice" Content="Obter Preços" HorizontalAlignment="Left" Margin="669,217,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnGetMediumPrice_Click"/>
-        <Button x:Name="btnCalculateAll" Content="Calcular TUDO" HorizontalAlignment="Left" Margin="669,160,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnCalculateAll_Click"/>
-        <Button x:Name="btnInsertMany" Content="Inserir em Lote" HorizontalAlignment="Left" Margin="669,378,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnInsertMany_Click"/>
-        <Button x:Name="btnDeleteAll" Content="Apagar Tudo" HorizontalAlignment="Left" Margin="669,295,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnDeleteAll_Click"/>
+        <Button x:Name="btnInsert" Content="Inserir" HorizontalAlignment="Left" Margin="669,239,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnInsert_Click"/>
+        <Button x:Name="btnGetMediumPrice" Content="Obter Preços" HorizontalAlignment="Left" Margin="669,335,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnGetMediumPrice_Click"/>
+        <Button x:Name="btnCalculateAll" Content="Calcular TUDO" HorizontalAlignment="Left" Margin="669,287,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnCalculateAll_Click"/>
+        <Button x:Name="btnInsertMany" Content="Inserir em Lote" HorizontalAlignment="Left" Margin="669,427,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnInsertMany_Click"/>
+        <Button x:Name="btnDeleteAll" Content="Apagar Tudo" HorizontalAlignment="Left" Margin="669,381,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnDeleteAll_Click"/>
+        <Button x:Name="btnCalculatePersonal" Content="Calcular Excel" HorizontalAlignment="Left" Margin="668,106,0,0" VerticalAlignment="Top" Height="33" Width="111" Click="btnCalculatePersonal_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="674,163,0,0" VerticalAlignment="Top" Height="53" Width="102" Click="Button_Click"/>
 
     </Grid>
 </Window>
