@@ -3,6 +3,7 @@ using PriceExtractor.Services;
 using PriceExtractor.Tools;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace PriceExtractor.Interface
@@ -27,7 +28,21 @@ namespace PriceExtractor.Interface
         {
             try
             {
-                var negotiations = TextExtractor.ExtractInText(txtInputText.Text, dpNegotiation.DisplayDate);
+                var negotiations = TextExtractor.ExtractInXPText(txtInputText.Text, dpNegotiation.DisplayDate);
+                dgNegotiation.ItemsSource = negotiations;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                return;
+            }
+        }
+
+        private void btnCalculatePersonal_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var negotiations = TextExtractor.ExtractInPersonalStatement(txtInputText.Text);
                 dgNegotiation.ItemsSource = negotiations;
             }
             catch (Exception error)
@@ -116,6 +131,29 @@ namespace PriceExtractor.Interface
             {
                 MessageBox.Show(error.Message);
                 return;
+            }
+        }
+
+        // TODO: Remover
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var negotiationAssets = NegotiationAssetService
+                    .GetAllNegotiationsAsset()
+                    .Where(x => x.AssetType == Enums.AssetType.None)
+                    .ToList();
+
+                foreach (var asset in negotiationAssets)
+                    asset.AssetType = Tools.TextExtractor.TakeAssetType(asset.StockCode);
+
+                Services.NegotiationAssetService.UpdateNegotiationsAssets(negotiationAssets);
+
+                MessageBox.Show("Sucesso.");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
     }
